@@ -58,18 +58,18 @@ class LinkedList:
 
         new_node = Node(data)
         lead_node = self.traverse(index-1)
-        pointer_holder = lead_node.next
+        holding_pointer = lead_node.next
 
         lead_node.next = new_node
-        new_node.next = pointer_holder
+        new_node.next = holding_pointer
 
     def remove(self, index):
         if index == 0:
             self.head = self.head.next
             return self
         lead_node = self.traverse(index-1)
-        pointer_holder = self.traverse(index)
-        lead_node.next = pointer_holder.next
+        holding_pointer = self.traverse(index)
+        lead_node.next = holding_pointer.next
 
     def traverse(self, index):
         counter = 0
