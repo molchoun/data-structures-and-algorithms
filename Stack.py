@@ -10,7 +10,7 @@ class Stack:
         self.bottom = None
         self.len = 0
 
-    def peak(self):
+    def peek(self):
         return self.top
 
     def push(self, data):
@@ -34,14 +34,13 @@ class Stack:
         return current_node
 
 
-
 if __name__ == '__main__':
     stack1 = Stack()
     stack1.push('google')
     stack1.push('udemy')
     stack1.push('discord')
     print(stack1.pop())
-    # print(stack1.peak().next.data)
+    # print(stack1.peek().next.data)
     print(stack1.pop())
     print(stack1.pop())
     print(stack1.bottom)
