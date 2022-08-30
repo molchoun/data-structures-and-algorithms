@@ -37,6 +37,5 @@ if __name__ == '__main__':
     queue1.enqueue('Matt')
     queue1.enqueue('Jeff')
     queue1.dequeue()
-    queue1.dequeue()
 
     print(queue1.last.data)
