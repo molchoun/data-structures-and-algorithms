@@ -10,7 +10,7 @@ class Node:
         return str(self.data)
 
 
-class LinkedList():
+class LinkedList:
     def __init__(self, data=None) -> None:
         self.head = None
         self.tail = None
@@ -41,12 +41,12 @@ class LinkedList():
         for elem in data:
             self.append(elem)
 
-    def printList(self):
+    def print_l(self):
         array = []
-        currentNode = self.head
-        while currentNode != None:
-            array.append(currentNode.data)
-            currentNode = currentNode.next
+        current_node = self.head
+        while current_node is not None:
+            array.append(current_node.data)
+            current_node = current_node.next
         print(array)
 
     def insert(self, index, data):
@@ -56,28 +56,28 @@ class LinkedList():
         elif index > len(self) - 1:
             raise IndexError('list index out of range')
 
-        newNode = Node(data)
-        leadNode = self.traverse(index-1)
-        pointer_holder = leadNode.next
+        new_node = Node(data)
+        lead_node = self.traverse(index-1)
+        pointer_holder = lead_node.next
 
-        leadNode.next = newNode
-        newNode.next = pointer_holder
+        lead_node.next = new_node
+        new_node.next = pointer_holder
 
     def remove(self, index):
         if index == 0:
             self.head = self.head.next
             return self
-        leadNode = self.traverse(index-1)
+        lead_node = self.traverse(index-1)
         pointer_holder = self.traverse(index)
-        leadNode.next = pointer_holder.next
+        lead_node.next = pointer_holder.next
 
     def traverse(self, index):
         counter = 0
-        currentNode = self.head
+        current_node = self.head
         while counter != index:
-            currentNode = currentNode.next
+            current_node = current_node.next
             counter += 1
-        return currentNode
+        return current_node
 
     def __len__(self):
         count = 0
@@ -113,5 +113,5 @@ if __name__ == '__main__':
     l_list.insert(2, 56)
     l_list.remove(2)
     l_list.reverse()
-    l_list.printList()
+    l_list.print_l()
     print(len(l_list))
